@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:perplexity_clone/Theme/colors.dart';
 import 'package:perplexity_clone/Widgets/search_section.dart';
 import 'package:perplexity_clone/Widgets/side_bar.dart';
 
@@ -26,6 +27,12 @@ class HomePage extends StatelessWidget {
                   children: [
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 12.0),
+                      child: Text("Pro", 
+                      style: TextStyle(
+                        fontSize: 14.0,
+                        color: AppColors.footerGrey,
+                      ),
+                      ),
                       )
                   ],
                 ),
