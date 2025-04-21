@@ -45,6 +45,7 @@ class SearchSection extends StatelessWidget {
                     ),
                     border: InputBorder.none,
                     isDense: true, // 41:40
+                    contentPadding: EdgeInsets.zero,
                   ),
                 ),
 
