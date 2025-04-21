@@ -17,6 +17,7 @@ class _SideBarState extends State<SideBar> {
       width: isCollapsed ? 64 : 128,
       color: AppColors.sideNav,
       child: Column(
+        crossAxisAlignment: isCollapsed ? CrossAxisAlignment.center : CrossAxisAlignment.start,
         children: [
           const SizedBox(height: 16,),
           Icon(
