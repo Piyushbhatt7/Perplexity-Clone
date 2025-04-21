@@ -29,7 +29,7 @@ class _SideBarState extends State<SideBar> {
              const SizedBox(height: 24.0, ),
 
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: isCollapsed ? MainAxisAlignment.center : MainAxisAlignment.start,
               children: [
                 Container(
                   margin: EdgeInsets.symmetric(vertical: 14.0, horizontal: 10.0),
