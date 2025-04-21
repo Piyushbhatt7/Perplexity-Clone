@@ -18,7 +18,10 @@ class _SearchBarButtonState extends State<SearchBarButton> {
       ),
       child: Row(
         children: [
-          Icon(Icons.plus_one, color: AppColors.iconGrey,)
+          Icon(Icons.plus_one, color: AppColors.iconGrey, size: 20.0,),
+          Text("Focus", style: TextStyle(
+            color: AppColors.textGrey,
+          ),)
         ],
       ),
     );

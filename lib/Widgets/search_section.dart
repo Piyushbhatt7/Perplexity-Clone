@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:perplexity_clone/Theme/colors.dart';
+import 'package:perplexity_clone/Widgets/search_bar_button.dart';
 
 class SearchSection extends StatelessWidget {
   const SearchSection({super.key});
@@ -41,7 +42,7 @@ class SearchSection extends StatelessWidget {
 
               Row(
                 children: [
-                  
+                  SearchBarButton(),
                 ],
               )
             ],
