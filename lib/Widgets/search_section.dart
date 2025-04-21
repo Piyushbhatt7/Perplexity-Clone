@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:perplexity_clone/Theme/colors.dart';
 
 class SearchSection extends StatelessWidget {
   const SearchSection({super.key});
@@ -16,6 +17,23 @@ class SearchSection extends StatelessWidget {
             fontWeight: FontWeight.w400,
             height: 1.2,
             letterSpacing: -0.5
+          ),
+        ),
+
+        const SizedBox(height: 32.0,),
+        Container(
+          width: 700,
+          decoration: BoxDecoration(
+            color: AppColors.searchBar,
+          ),
+          child: Column(
+            children: [
+              TextField(
+                decoration: InputDecoration(
+                  hintText: 'Search anything...'
+                ),
+              )
+            ],
           ),
         )
       ],
