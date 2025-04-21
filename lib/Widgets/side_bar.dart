@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:perplexity_clone/Theme/colors.dart';
+import 'package:perplexity_clone/Widgets/side_bar_button.dart';
 
 class SideBar extends StatefulWidget {
   const SideBar({super.key});
@@ -27,8 +28,8 @@ class _SideBarState extends State<SideBar> {
              ),
 
              const SizedBox(height: 24.0, ),
-
-            
+    
+             SideBarButton(isCollapsed: isCollapsed, icon: Icons.add, text: "Home"),        
 
             Container(
               margin: EdgeInsets.symmetric(vertical: 14.0, horizontal: 10.0),
