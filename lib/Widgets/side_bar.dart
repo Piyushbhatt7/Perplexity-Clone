@@ -11,7 +11,8 @@ class SideBar extends StatelessWidget {
       color: AppColors.sideNav,
       child: Column(
         children: [
-          Icon(Icons.auto_awesome_mosaic_sharp)
+          const SizedBox(height: 16,),
+          Icon(Icons.auto_awesome_mosaic_sharp, color: AppColors.whiteColor, size: 30,)
         ],
       ),
     );
