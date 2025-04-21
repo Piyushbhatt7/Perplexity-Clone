@@ -12,19 +12,20 @@ class HomePage extends StatelessWidget {
         children: [
           // side nav bar
           SideBar(),
-          
-          Column(
-            children: [
-              // search section
-              Expanded(
-                child: SearchSection()
-                ),
-             // footer section
-             Container(
-              height: 20,
-             )
-
-            ],
+          Expanded(
+            child: Column(
+              children: [
+                // search section
+                Expanded(
+                  child: SearchSection()
+                  ),
+               // footer section
+               Container(
+                height: 20,
+               )
+            
+              ],
+            ),
           )
         ],
       )
