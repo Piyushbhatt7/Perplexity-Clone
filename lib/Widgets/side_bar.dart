@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:perplexity_clone/Theme/colors.dart';
 
-class SideBar extends StatelessWidget {
+class SideBar extends StatefulWidget {
   const SideBar({super.key});
 
+  @override
+  State<SideBar> createState() => _SideBarState();
+}
+
+class _SideBarState extends State<SideBar> {
+  bool isCollapsed = true;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -64,13 +70,20 @@ class SideBar extends StatelessWidget {
 
             const Spacer(),
 
-            Container(
-              margin: EdgeInsets.symmetric(vertical: 14.0),
-              child: Icon(
-              Icons.keyboard_arrow_right,
-               color: AppColors.iconGrey, 
-               size: 22,
-               ),
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  isCollapsed = !isCollapsed;
+                });
+              },
+              child: Container(
+                margin: EdgeInsets.symmetric(vertical: 14.0),
+                child: Icon(
+                Icons.keyboard_arrow_right,
+                 color: AppColors.iconGrey, 
+                 size: 22,
+                 ),
+              ),
             ),
 
             const SizedBox(height: 16.0,),
