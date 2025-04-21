@@ -29,6 +29,7 @@ class _SideBarState extends State<SideBar> {
              const SizedBox(height: 24.0, ),
 
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
                   margin: EdgeInsets.symmetric(vertical: 14.0, horizontal: 10.0),
@@ -38,9 +39,11 @@ class _SideBarState extends State<SideBar> {
                    size: 22,
                    ),
                 ),
-                Text("Home", style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),)
+                isCollapsed ? 
+                const SizedBox()
+                : Text("Home", style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),)
               ],
-            ),
+            ), // 22
 
             Container(
               margin: EdgeInsets.symmetric(vertical: 14.0, horizontal: 10.0),
