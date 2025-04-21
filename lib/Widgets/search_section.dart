@@ -26,40 +26,58 @@ class SearchSection extends StatelessWidget {
           width: 700,
           decoration: BoxDecoration(
             color: AppColors.searchBar,
+            borderRadius: BorderRadius.circular(8.0),
+            border: Border.all(
+              color: AppColors.searchBarBorder,
+              width: 1.5,
+            )
           ),
           child: Column(
             children: [
-              TextField(
-                decoration: InputDecoration(
-                  hintText: 'Search anything...',
-                  hintStyle: TextStyle(
-                    color: AppColors.textGrey,
-                    fontSize: 16.0,
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: 'Search anything...',
+                    hintStyle: TextStyle(
+                      color: AppColors.textGrey,
+                      fontSize: 16.0,
+                    ),
+                    border: InputBorder.none,
+                    isDense: true, // 41:40
                   ),
-                  border: InputBorder.none,
                 ),
+
               ),
 
-              Row(
-                children: [
-                  SearchBarButton(
-                    icon: Icons.auto_awesome_outlined,
-                    text: 'Focus',
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Row(
+                  children: [
+                    SearchBarButton(
+                      icon: Icons.auto_awesome_outlined,
+                      text: 'Focus',
+                      ),
+                    const SizedBox(width: 12.0,),
+                    SearchBarButton(
+                      icon: Icons.add_circle_outline_outlined,
+                      text: 'Attach',
                     ),
-                  const SizedBox(width: 12.0,),
-                  SearchBarButton(
-                    icon: Icons.add_circle_outline_outlined,
-                    text: 'Attach',
-                  ),
-                  const Spacer(),
-                  Container(
-                    padding: const EdgeInsets.all(9),
-                    decoration: BoxDecoration(
-                      color: AppColors.submitButton
-                    ),
-                    child: const Icon(Icons.arrow_forward_rounded, color: AppColors.background, size: 16,),
-                  )
-                ],
+                    const Spacer(),
+                    Container(
+                      padding: const EdgeInsets.all(9),
+                      decoration: BoxDecoration(
+                        color: AppColors.submitButton,
+                        borderRadius: BorderRadius.circular(40),
+                      ),
+                      child: const Icon(
+                        Icons.arrow_forward_outlined, 
+                        color: AppColors.background, 
+                        size: 16,
+                        ),
+                    )
+                  ],
+                ),
               )
             ],
           ),
