@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:perplexity_clone/Theme/colors.dart';
 
 class SideBarButton extends StatelessWidget {
-  final bool isCollapsed = true;
-  const SideBarButton({super.key});
+  final bool isCollapsed;
+  final IconData icon;
+  final Text text;
+  const SideBarButton({super.key, required this.isCollapsed, required this.icon, required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +24,6 @@ class SideBarButton extends StatelessWidget {
                 const SizedBox()
                 : Text("Home", style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),)
               ],
-            ), /;
+            );
   }
 }
