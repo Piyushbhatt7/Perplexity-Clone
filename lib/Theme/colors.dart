@@ -12,4 +12,5 @@ class AppColors {
   static const cardColor = Color(0xFF262626);
   static const submitButton = Color.fromRGBO(27, 185, 206, 1);
   static const whiteColor = Colors.white;
+  
 }
