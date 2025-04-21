@@ -15,14 +15,14 @@ class SideBarButton extends StatelessWidget {
                 Container(
                   margin: EdgeInsets.symmetric(vertical: 14.0, horizontal: 10.0),
                   child: Icon(
-                  Icons.add,
+                  icon,
                    color: AppColors.iconGrey, 
                    size: 22,
                    ),
                 ),
                 isCollapsed ? 
                 const SizedBox()
-                : Text("Home", style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),)
+                : Text(text, style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),)
               ],
             );
   }
