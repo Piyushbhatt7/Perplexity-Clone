@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: AppColors.background
+        scaffoldBackgroundColor: AppColors.background,
       ),
       home: HomePage(),
     );
