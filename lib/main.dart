@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:perplexity_clone/Pages/home_page.dart';
+import 'package:perplexity_clone/Theme/colors.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        scaffoldBackgroundColor: AppColors.background
       ),
       home: HomePage(),
     );
