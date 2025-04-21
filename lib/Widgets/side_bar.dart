@@ -77,10 +77,12 @@ class _SideBarState extends State<SideBar> {
                   isCollapsed = !isCollapsed;
                 });
               },
-              child: Container(
+              child: AnimatedContainer(
+                duration: const Duration(milliseconds: 100),
                 margin: EdgeInsets.symmetric(vertical: 14.0),
                 child: Icon(
-                Icons.keyboard_arrow_right,
+                  isCollapsed ? 
+                Icons.keyboard_arrow_right : Icons.keyboard_arrow_left,
                  color: AppColors.iconGrey, 
                  size: 22,
                  ),
