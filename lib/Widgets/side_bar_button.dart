@@ -22,7 +22,7 @@ class SideBarButton extends StatelessWidget {
                 ),
                 isCollapsed ? 
                 const SizedBox()
-                : Text(text, style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),)
+                : Text(text, style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.w300),)
               ],
             );
   }
