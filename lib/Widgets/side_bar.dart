@@ -15,7 +15,7 @@ class _SideBarState extends State<SideBar> {
   Widget build(BuildContext context) {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 120),
-      width: isCollapsed ? 64 : 128,
+      width: isCollapsed ? 64 : 140,
       color: AppColors.sideNav,
       child: Column(
         children: [
@@ -47,7 +47,7 @@ class _SideBarState extends State<SideBar> {
               ],
             ),
           ),
-          
+
            GestureDetector(
                     onTap: () {
                       setState(() {
