@@ -25,6 +25,53 @@ class SideBar extends StatelessWidget {
              color: AppColors.iconGrey, 
              size: 22,
              ),
+
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 14.0),
+              child: Icon(
+              Icons.search,
+               color: AppColors.iconGrey, 
+               size: 22,
+               ),
+            ),
+
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 14.0),
+              child: Icon(
+              Icons.language,
+               color: AppColors.iconGrey, 
+               size: 22,
+               ),
+            ),
+
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 14.0),
+              child: Icon(
+              Icons.auto_awesome,
+               color: AppColors.iconGrey, 
+               size: 22,
+               ),
+            ),
+
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 14.0),
+              child: Icon(
+              Icons.cloud_outlined,
+               color: AppColors.iconGrey, 
+               size: 22,
+               ),
+            ),
+
+            const Spacer(),
+
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 14.0),
+              child: Icon(
+              Icons.keyboard_arrow_right,
+               color: AppColors.iconGrey, 
+               size: 22,
+               ),
+            ),
         ],
       ),
     );
