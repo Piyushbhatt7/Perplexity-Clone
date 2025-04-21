@@ -44,8 +44,11 @@ class _SideBarState extends State<SideBar> {
                   SideBarButton(isCollapsed: isCollapsed, icon: Icons.cloud_outlined, text: "Library"),   
             
                   const Spacer(),
-            
-                  GestureDetector(
+              ],
+            ),
+          ),
+          
+           GestureDetector(
                     onTap: () {
                       setState(() {
                         isCollapsed = !isCollapsed;
@@ -64,9 +67,6 @@ class _SideBarState extends State<SideBar> {
                   ),
             
                   const SizedBox(height: 16.0,),
-              ],
-            ),
-          ),
         ],
       ),
     );
