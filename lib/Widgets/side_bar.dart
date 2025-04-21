@@ -13,7 +13,7 @@ class SideBar extends StatelessWidget {
         children: [
           const SizedBox(height: 16,),
           Icon(
-            Icons.auto_awesome_mosaic_sharp,
+            Icons.auto_awesome_mosaic_rounded,
              color: AppColors.whiteColor, 
              size: 30,
              ),
@@ -72,6 +72,8 @@ class SideBar extends StatelessWidget {
                size: 22,
                ),
             ),
+
+            const SizedBox(height: 16.0,),
         ],
       ),
     );
