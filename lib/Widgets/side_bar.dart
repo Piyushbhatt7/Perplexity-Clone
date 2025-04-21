@@ -12,7 +12,19 @@ class SideBar extends StatelessWidget {
       child: Column(
         children: [
           const SizedBox(height: 16,),
-          Icon(Icons.auto_awesome_mosaic_sharp, color: AppColors.whiteColor, size: 30,)
+          Icon(
+            Icons.auto_awesome_mosaic_sharp,
+             color: AppColors.whiteColor, 
+             size: 30,
+             ),
+
+             const SizedBox(height: 24.0,),
+
+            Icon(
+            Icons.add,
+             color: AppColors.iconGrey, 
+             size: 22,
+             ),
         ],
       ),
     );
