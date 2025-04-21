@@ -4,7 +4,7 @@ import 'package:perplexity_clone/Theme/colors.dart';
 class SideBarButton extends StatelessWidget {
   final bool isCollapsed;
   final IconData icon;
-  final Text text;
+  final String text;
   const SideBarButton({super.key, required this.isCollapsed, required this.icon, required this.text});
 
   @override
