@@ -30,8 +30,19 @@ class SearchSection extends StatelessWidget {
             children: [
               TextField(
                 decoration: InputDecoration(
-                  hintText: 'Search anything...'
+                  hintText: 'Search anything...',
+                  hintStyle: TextStyle(
+                    color: AppColors.textGrey,
+                    fontSize: 16.0,
+                  ),
+                  border: InputBorder.none,
                 ),
+              ),
+
+              Row(
+                children: [
+                  
+                ],
               )
             ],
           ),
