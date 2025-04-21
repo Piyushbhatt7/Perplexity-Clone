@@ -26,16 +26,24 @@ class _SideBarState extends State<SideBar> {
              size: 30,
              ),
 
-             const SizedBox(height: 24.0,),
+             const SizedBox(height: 24.0, ),
 
-            Icon(
-            Icons.add,
-             color: AppColors.iconGrey, 
-             size: 22,
-             ),
+            Row(
+              children: [
+                Container(
+                  margin: EdgeInsets.symmetric(vertical: 14.0, horizontal: 10.0),
+                  child: Icon(
+                  Icons.add,
+                   color: AppColors.iconGrey, 
+                   size: 22,
+                   ),
+                ),
+                Text("Home", style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),)
+              ],
+            ),
 
             Container(
-              margin: EdgeInsets.symmetric(vertical: 14.0),
+              margin: EdgeInsets.symmetric(vertical: 14.0, horizontal: 10.0),
               child: Icon(
               Icons.search,
                color: AppColors.iconGrey, 
@@ -44,7 +52,7 @@ class _SideBarState extends State<SideBar> {
             ),
 
             Container(
-              margin: EdgeInsets.symmetric(vertical: 14.0),
+              margin: EdgeInsets.symmetric(vertical: 14.0, horizontal: 10.0),
               child: Icon(
               Icons.language,
                color: AppColors.iconGrey, 
@@ -53,7 +61,7 @@ class _SideBarState extends State<SideBar> {
             ),
 
             Container(
-              margin: EdgeInsets.symmetric(vertical: 14.0),
+              margin: EdgeInsets.symmetric(vertical: 14.0, horizontal: 10.0),
               child: Icon(
               Icons.auto_awesome,
                color: AppColors.iconGrey, 
@@ -62,7 +70,7 @@ class _SideBarState extends State<SideBar> {
             ),
 
             Container(
-              margin: EdgeInsets.symmetric(vertical: 14.0),
+              margin: EdgeInsets.symmetric(vertical: 14.0, horizontal: 10.0),
               child: Icon(
               Icons.cloud_outlined,
                color: AppColors.iconGrey, 
@@ -80,7 +88,7 @@ class _SideBarState extends State<SideBar> {
               },
               child: AnimatedContainer(
                 duration: const Duration(milliseconds: 100),
-                margin: EdgeInsets.symmetric(vertical: 14.0),
+                margin: EdgeInsets.symmetric(vertical: 14.0, horizontal: 10.0),
                 child: Icon(
                   isCollapsed ? 
                 Icons.keyboard_arrow_right : Icons.keyboard_arrow_left,
