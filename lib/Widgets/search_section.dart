@@ -42,7 +42,23 @@ class SearchSection extends StatelessWidget {
 
               Row(
                 children: [
-                  SearchBarButton(),
+                  SearchBarButton(
+                    icon: Icons.auto_awesome_outlined,
+                    text: 'Focus',
+                    ),
+                  const SizedBox(width: 12.0,),
+                  SearchBarButton(
+                    icon: Icons.add_circle_outline_outlined,
+                    text: 'Attach',
+                  ),
+                  const Spacer(),
+                  Container(
+                    padding: const EdgeInsets.all(9),
+                    decoration: BoxDecoration(
+                      color: AppColors.submitButton
+                    ),
+                    child: const Icon(Icons.arrow_forward_rounded, color: AppColors.background, size: 16,),
+                  )
                 ],
               )
             ],
