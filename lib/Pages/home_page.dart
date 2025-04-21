@@ -24,16 +24,74 @@ class HomePage extends StatelessWidget {
                Container(
                 padding: EdgeInsets.symmetric(vertical: 16.0),
                 child: Wrap(
+                  alignment: WrapAlignment.center,
                   children: [
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 12.0),
-                      child: Text("Pro", 
+                      child: Text(
+                        "Pro", 
                       style: TextStyle(
-                        fontSize: 14.0,
+                        fontSize: 12.0,
+                        color: AppColors.footerGrey,
+                      ),
+                      ),
+                      ),
+
+                       Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 12.0),
+                      child: Text(
+                        "Enterprise", 
+                      style: TextStyle(
+                        fontSize: 12.0,
+                        color: AppColors.footerGrey,
+                      ),
+                      ),
+                      ),
+
+                       Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 12.0),
+                      child: Text(
+                        "Store", 
+                      style: TextStyle(
+                        fontSize: 12.0,
+                        color: AppColors.footerGrey,
+                      ),
+                      ),
+                      ),
+
+                       Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 12.0),
+                      child: Text(
+                        "Blog", 
+                      style: TextStyle(
+                        fontSize: 12.0,
+                        color: AppColors.footerGrey,
+                      ),
+                      ),
+                      ),
+
+                       Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 12.0),
+                      child: Text(
+                        "Careers", 
+                      style: TextStyle(
+                        fontSize: 12.0,
+                        color: AppColors.footerGrey,
+                      ),
+                      ),
+                      ),
+
+                       Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 12.0),
+                      child: Text(
+                        "English (English)", 
+                      style: TextStyle(
+                        fontSize: 12.0,
                         color: AppColors.footerGrey,
                       ),
                       ),
                       )
+
                   ],
                 ),
                ),
