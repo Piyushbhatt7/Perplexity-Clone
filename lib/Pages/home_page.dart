@@ -21,8 +21,15 @@ class HomePage extends StatelessWidget {
                   ),
                // footer section
                Container(
-                height: 20,
-               )
+                padding: EdgeInsets.symmetric(vertical: 16.0),
+                child: Wrap(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 12.0),
+                      )
+                  ],
+                ),
+               ),
             
               ],
             ),
