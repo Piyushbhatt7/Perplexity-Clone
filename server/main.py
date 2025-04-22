@@ -12,6 +12,7 @@ search_service = SearchService
 @app.post("/chat")
 def chat_endpoint(body: ChatBody):
     # search the web and find appropriate sources
+    search_service.web_search()
     # sort the sources
     # generate the response using LLM
     
