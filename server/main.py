@@ -5,7 +5,7 @@ from services.search_service import SearchService
 
 app = FastAPI()
 
-search_service = SearchService
+search_service = SearchService()
 
  # chat
  # / chat? query = who%20is%piyush
