@@ -1,8 +1,11 @@
 from fastapi import FastAPI
 from pydantic_models.chat_body import ChatBody
+from services.search_service import SearchService
 
 
 app = FastAPI()
+
+search_service = SearchService
 
  # chat
  # / chat? query = who%20is%piyush
