@@ -23,8 +23,8 @@ def chat_endpoint(body: ChatBody):
     print(sorted_results)
     # generate the response using LLM
     
-    llm_service.generate_response(body.query, sorted_results)
+    response = llm_service.generate_response(body.query, sorted_results)
     
     
-    return body.query
+    return response 
      
