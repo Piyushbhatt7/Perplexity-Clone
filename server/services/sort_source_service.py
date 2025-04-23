@@ -12,5 +12,5 @@ class SortSourceService:
         for res in search_results:
             res_embedding = self.embedding_model.encode(res['content'])
             
-            similarity = np.dot()
+            similarity = np.dot(query_embedding, res_embedding)
         
