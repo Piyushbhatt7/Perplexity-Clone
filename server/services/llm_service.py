@@ -16,5 +16,20 @@ class LLMService:
         context_text = "\n\n".join([
             f"Source ${i+1} ({result['url']}) : \n{result['content']}"
             for i, result in enumerate(search_results)
-        ])
+        ]
+        )
+        
+        full_prompt = f"""
+        Context from web search:
+            {context_text}
+            
+        Query : {query}
+        Please provide a comprehensive, detailed, well-cited accurate response using above context.
+        Think and reason deeply. Ensure it answers the query the user is asking. 
+        Do not use your knowledge until absolutely necessary.
+        
+        
+        """
+        
+        response = self.model.generate_content(full_prompt)
         
