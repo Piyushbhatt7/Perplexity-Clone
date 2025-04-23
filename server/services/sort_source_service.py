@@ -6,7 +6,7 @@ class SortSourceService:
     def __init__(self):
         self.embedding_model = SentenceTransformer("all-miniLM-L6-v2")
     
-    def sort_source(self, quey: str, search_results: List[dict]):
+    def sort_source(self, query: str, search_results: List[dict]):
         query_embedding = self.embedding_model.encode(query)
         
         print(query_embedding)
