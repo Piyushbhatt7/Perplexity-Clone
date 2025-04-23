@@ -9,6 +9,7 @@ class SortSourceService:
         self.embedding_model = SentenceTransformer("all-miniLM-L6-v2")
     
     def sort_source(self, query: str, search_results: List[dict]):
+        relevant_docs = []
         logger = logging.getLogger(__name__)
         query_embedding = self.embedding_model.encode(query)
 
@@ -25,6 +26,9 @@ class SortSourceService:
                 )
                 
                 res['relevance_score'] = similarity
+                
+                if similarity > 0.3:
+                    
                 
             except Exception as e:
                 logger.error("Failed to compute similarity for content: %s\nError: %s", content, str(e))
