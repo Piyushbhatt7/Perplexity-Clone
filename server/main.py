@@ -18,6 +18,7 @@ def chat_endpoint(body: ChatBody):
     #print(search_results)
     # sort the sources
     sorted_results = sort_source_service.sort_source(body.query, search_results)
+    print(sorted_results)
     # generate the response using LLM
     
     return body.query
