@@ -23,6 +23,8 @@ class SortSourceService:
                 similarity = np.dot(query_embedding, res_embedding) / (
                     np.linalg.norm(query_embedding) * np.linalg.norm(res_embedding)
                 )
-                print(similarity)
+                
+                res['relevance_score'] = similarity
+                
             except Exception as e:
                 logger.error("Failed to compute similarity for content: %s\nError: %s", content, str(e))
