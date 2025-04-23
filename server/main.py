@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from pydantic_models.chat_body import ChatBody
+from services.llm_service import LLMService
 from services.sort_source_service import SortSourceService
 from services.search_service import SearchService
 
@@ -8,6 +9,7 @@ app = FastAPI()
 
 search_service = SearchService()
 sort_source_service = SortSourceService()
+llm_service = LLMService()
 
  # chat
  # / chat? query = who%20is%piyush
