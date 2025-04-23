@@ -9,5 +9,6 @@ class SortSourceService:
     def sort_source(self, query: str, search_results: List[dict]):
         query_embedding = self.embedding_model.encode(query)
         
-        print(query_embedding)
+        for res in search_results:
+            res_embedding = self.embedding_model.encode(res['content'])
         
