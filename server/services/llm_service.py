@@ -33,5 +33,5 @@ class LLMService:
         
         response = self.model.generate_content(full_prompt)
         
-        return response.textm
-        
+        return response.text
+        # 1:45:29
