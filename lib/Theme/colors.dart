@@ -7,7 +7,7 @@ class AppColors {
   static const searchBarBorder = Color.fromRGBO(60, 63, 64, 1);
   static const iconGrey = Color(0xFF909090);
   static const textGrey = Color(0xFFAAAAAA);
-  static const footerGrey = Color(0xFF737373);
+  static const footerGrey = Color(0xFF737373); 
   static const proButton = Color.fromRGBO(47, 48, 47, 1);
   static const cardColor = Color(0xFF262626);
   static const submitButton = Color.fromRGBO(27, 185, 206, 1);
