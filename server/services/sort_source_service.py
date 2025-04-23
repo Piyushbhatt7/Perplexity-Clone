@@ -30,6 +30,6 @@ class SortSourceService:
             if similarity > 0.3:
                 relevant_docs.append(res)
                     
-        return sorted(relevant_docs, key=lambda x: x['relevance_score'])
+        return sorted(relevant_docs, key=lambda x: x['relevance_score'], reverse=True)
                 
           
