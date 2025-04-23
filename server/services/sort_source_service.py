@@ -1,20 +1,28 @@
 from typing import List
 from sentence_transformers import SentenceTransformer
 import numpy as np
+import logging
+
 class SortSourceService:
     
     def __init__(self):
         self.embedding_model = SentenceTransformer("all-miniLM-L6-v2")
     
     def sort_source(self, query: str, search_results: List[dict]):
+        logger = logging.getLogger(__name__)
         query_embedding = self.embedding_model.encode(query)
-        
+
         for res in search_results:
-            res_embedding = self.embedding_model.encode(res["content"])
-            
-            similarity = np.dot(query_embedding, res_embedding)/(
-                np.linalg.norm(query_embedding) * np.linalg.norm(res_embedding)
-            )
-            
-            print(similarity)
-        
+            content = res.get("content")
+            if not content:
+                logger.warning("Skipping result with no content: %s", res)
+                continue
+
+            try:
+                res_embedding = self.embedding_model.encode(content)
+                similarity = np.dot(query_embedding, res_embedding) / (
+                    np.linalg.norm(query_embedding) * np.linalg.norm(res_embedding)
+                )
+                print(similarity)
+            except Exception as e:
+                logger.error("Failed to compute similarity for content: %s\nError: %s", content, str(e))
