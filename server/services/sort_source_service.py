@@ -28,7 +28,9 @@ class SortSourceService:
                 res['relevance_score'] = similarity
                 
                 if similarity > 0.3:
+                    relevant_docs.append(res)
                     
+        return sorted(relevant_docs, key=lambda x: x['relevance_score'])
                 
             except Exception as e:
                 logger.error("Failed to compute similarity for content: %s\nError: %s", content, str(e))
