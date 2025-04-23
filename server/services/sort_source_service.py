@@ -19,18 +19,17 @@ class SortSourceService:
                 logger.warning("Skipping result with no content: %s", res)
                 continue
 
-            try:
-                res_embedding = self.embedding_model.encode(content)
-                similarity = np.dot(query_embedding, res_embedding) / (
-                    np.linalg.norm(query_embedding) * np.linalg.norm(res_embedding)
+            
+            res_embedding = self.embedding_model.encode(content)
+            similarity = np.dot(query_embedding, res_embedding) / (
+            np.linalg.norm(query_embedding) * np.linalg.norm(res_embedding)
                 )
                 
-                res['relevance_score'] = similarity
+            res['relevance_score'] = similarity
                 
-                if similarity > 0.3:
-                    relevant_docs.append(res)
+            if similarity > 0.3:
+                relevant_docs.append(res)
                     
         return sorted(relevant_docs, key=lambda x: x['relevance_score'])
                 
-            except Exception as e:
-                logger.error("Failed to compute similarity for content: %s\nError: %s", content, str(e))
+          
