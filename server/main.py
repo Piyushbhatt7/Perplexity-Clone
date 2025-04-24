@@ -27,6 +27,10 @@ async def websocket_chat_endpoint(websocket: WebSocket):
         
         search_results = search_service.web_search(body.query)
         sorted_results = sort_source_service.sort_source(body.query, search_results)
+        await websocket.send_json({
+            'type': 'search_result',
+            'data': sorted_results
+        })
     
         response = llm_service.generate_response(body.query, sorted_results)
     
