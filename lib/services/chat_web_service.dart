@@ -3,6 +3,7 @@ import 'dart:html';
 
 class ChatWebService {
   WebSocket? _socket;
+  ChatWebService._internal();
 
   void connect() {
     _socket = WebSocket('ws://localhost:8000/ws/chat');
