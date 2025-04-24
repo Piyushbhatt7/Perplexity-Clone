@@ -39,7 +39,7 @@ async def websocket_chat_endpoint(websocket: WebSocket):
     
         for chunk in llm_service.generate_response(query, sorted_results):
             await websocket.send_json({
-                type: 'content',
+                'type': "content",
                 'data': chunk
             })
     
