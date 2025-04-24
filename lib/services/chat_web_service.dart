@@ -18,8 +18,10 @@ class ChatWebService {
     // Removed erroneous _socket!.messages.listen block as it is not defined for WebSocket.
   }
 
-  void send()
+  void send(String query)
   {
-
+    _socket!.send({
+      'query': query
+    });
   }
 }
