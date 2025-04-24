@@ -13,7 +13,8 @@ llm_service = LLMService()
 
 # chat websocket
 @app.websocket("/we/chat")
-def websocket_chat_endpoint(websocket: WebSocket):
+async def websocket_chat_endpoint(websocket: WebSocket):
+    await websocket.accept()
     
 
  # chat
