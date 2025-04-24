@@ -12,6 +12,9 @@ sort_source_service = SortSourceService()
 llm_service = LLMService()
 
 # chat websocket
+@app.websocket("/we/chat")
+def websocket_chat_endpoint(websocket: WebSocket):
+    
 
  # chat
  # / chat? query = who%20is%piyush
