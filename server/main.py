@@ -18,6 +18,7 @@ async def websocket_chat_endpoint(websocket: WebSocket):
     
     try:
         data = await websocket.receive_json()
+        print(data)
         query = data.get("query")
         
         if not query:
