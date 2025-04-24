@@ -2,9 +2,10 @@ import 'dart:convert';
 import 'dart:html';
 
 class ChatWebService {
+  static final _instance = ChatWebService._internal();
   WebSocket? _socket;
-  ChatWebService._internal();
 
+ fc
   void connect() {
     _socket = WebSocket('ws://localhost:8000/ws/chat');
 
