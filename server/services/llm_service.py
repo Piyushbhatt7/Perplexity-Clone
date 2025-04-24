@@ -31,7 +31,9 @@ class LLMService:
         
         """
         
-        response = self.model.generate_content(full_prompt)
+        response = self.model.generate_content(full_prompt, stream=True)
+        for chunck in response:
+            return response.text
+                 
         
-        return response.text
         # 1:45:29
