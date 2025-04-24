@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:perplexity_clone/Theme/colors.dart';
 import 'package:perplexity_clone/Widgets/search_section.dart';
 import 'package:perplexity_clone/Widgets/side_bar.dart';
+import 'package:perplexity_clone/services/chat_web_service.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -11,6 +12,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    ChatWebService().connect();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
