@@ -32,7 +32,7 @@ async def websocket_chat_endpoint(websocket: WebSocket):
             'data': sorted_results
         })
     
-        response = llm_service.generate_response(body.query, sorted_results)
+        for chunk in llm_service.generate_response(body.query, sorted_results)
     
     
         return response 
