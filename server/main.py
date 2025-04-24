@@ -19,13 +19,14 @@ async def websocket_chat_endpoint(websocket: WebSocket):
     try:
         data = await websocket.receive_json()
         query = data.get("query")
-       # search the web and find appropriate sources
+        
+        if not query:
+            await websocket.send_text("Query not found")
+            return
+        body = ChatBody(query=query)
+        
         search_results = search_service.web_search(body.query)
-        #print(search_results)
-         # sort the sources
         sorted_results = sort_source_service.sort_source(body.query, search_results)
-        #print(sorted_results)
-        # generate the response using LLM
     
         response = llm_service.generate_response(body.query, sorted_results)
     
@@ -44,11 +45,7 @@ async def websocket_chat_endpoint(websocket: WebSocket):
 def chat_endpoint(body: ChatBody):
     # search the web and find appropriate sources
     search_results = search_service.web_search(body.query)
-    #print(search_results)
-    # sort the sources
     sorted_results = sort_source_service.sort_source(body.query, search_results)
-    #print(sorted_results)
-    # generate the response using LLM
     
     response = llm_service.generate_response(body.query, sorted_results)
     
