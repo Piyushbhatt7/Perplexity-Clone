@@ -20,6 +20,7 @@ async def websocket_chat_endpoint(websocket: WebSocket):
         data = await websocket.receive_json()
         print(data)
         query = data.get("query")
+        print(query)
         
         if not query:
             await websocket.send_text("Query not found")
@@ -27,6 +28,7 @@ async def websocket_chat_endpoint(websocket: WebSocket):
         body = ChatBody(query=query)
         
         search_results = search_service.web_search(body.query)
+        print(search_results)
         sorted_results = sort_source_service.sort_source(body.query, search_results)
         print(sorted_results)
         await websocket.send_json({
