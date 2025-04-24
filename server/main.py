@@ -20,9 +20,9 @@ async def websocket_chat_endpoint(websocket: WebSocket):
     try:
         await asyncio.sleep(0.1)
         data = await websocket.receive_json()
-        print(data)
+        #print(data)
         query = data.get("query")
-        print(query)
+        #print(query)
         
         if not query:
             await websocket.send_text("Query not found")
@@ -30,15 +30,15 @@ async def websocket_chat_endpoint(websocket: WebSocket):
         body = ChatBody(query=query)
         
         search_results = search_service.web_search(body.query)
-        print(search_results)
+       # print(search_results)
         sorted_results = sort_source_service.sort_source(body.query, search_results)
-        print(sorted_results)
+        #print(sorted_results)
         await asyncio.sleep(0.1)
         await websocket.send_json({
             'type': 'search_result',
             'data': sorted_results
         })
-        print("Hii")
+        #print("Hii")
     
         for chunk in llm_service.generate_response(query, sorted_results):
             
