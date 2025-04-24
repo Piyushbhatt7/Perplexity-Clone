@@ -1,29 +1,30 @@
 import 'dart:convert';
-import 'dart:io';
+import 'dart:html';
 
 class ChatWebService {
-
   WebSocket? _socket;
+
   void connect() {
-    WebSocket.connect("ws://localhost:8000/ws/chat").then((socket) {
-      _socket = socket;
-      _socket!.listen((message) {
-        final data = json.decode(message);
-        print(data['type']);
-      });
-    }).catchError((error) {
-      print("Failed to connect: $error");
+    _socket = WebSocket('ws://localhost:8000/ws/chat');
+
+    _socket!.onOpen.listen((_) {
+      print("Connected (Web)");
     });
 
-    // Removed erroneous _socket!.messages.listen block as it is not defined for WebSocket.
+    _socket!.onMessage.listen((event) {
+      final data = json.decode(event.data!);
+      print(data['type']);
+    });
+
+    _socket!.onError.listen((e) => print("WebSocket error: $e"));
+    _socket!.onClose.listen((_) => print("WebSocket closed"));
   }
 
-  void chat(String query)
-  {
-    print(query);
-    print(_socket);
-    _socket!.add(json.encode({
-      'query': query
-    }));
+  void chat(String query) {
+    if (_socket != null) {
+       print(_socket);
+      _socket!.send(json.encode({'query': query}));
+    }
   }
 }
+// 2:08:40
