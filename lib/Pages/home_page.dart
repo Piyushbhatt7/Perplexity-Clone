@@ -3,9 +3,14 @@ import 'package:perplexity_clone/Theme/colors.dart';
 import 'package:perplexity_clone/Widgets/search_section.dart';
 import 'package:perplexity_clone/Widgets/side_bar.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
