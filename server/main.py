@@ -17,7 +17,18 @@ async def websocket_chat_endpoint(websocket: WebSocket):
     await websocket.accept()
     
     try:
-        pass
+       # search the web and find appropriate sources
+        search_results = search_service.web_search(body.query)
+        #print(search_results)
+         # sort the sources
+        sorted_results = sort_source_service.sort_source(body.query, search_results)
+        #print(sorted_results)
+        # generate the response using LLM
+    
+        response = llm_service.generate_response(body.query, sorted_results)
+    
+    
+        return response 
     
     except:
         print("Unexpected error occurred")
@@ -34,7 +45,7 @@ def chat_endpoint(body: ChatBody):
     #print(search_results)
     # sort the sources
     sorted_results = sort_source_service.sort_source(body.query, search_results)
-    print(sorted_results)
+    #print(sorted_results)
     # generate the response using LLM
     
     response = llm_service.generate_response(body.query, sorted_results)
