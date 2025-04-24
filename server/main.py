@@ -17,6 +17,8 @@ async def websocket_chat_endpoint(websocket: WebSocket):
     await websocket.accept()
     
     try:
+        data = await websocket.receive_json()
+        query = data.get("query")
        # search the web and find appropriate sources
         search_results = search_service.web_search(body.query)
         #print(search_results)
