@@ -2,10 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:perplexity_clone/Theme/colors.dart';
 import 'package:perplexity_clone/Widgets/search_bar_button.dart';
+import 'package:perplexity_clone/services/chat_web_service.dart';
 
-class SearchSection extends StatelessWidget {
+class SearchSection extends StatefulWidget {
   const SearchSection({super.key});
 
+  @override
+  State<SearchSection> createState() => _SearchSectionState();
+}
+
+class _SearchSectionState extends State<SearchSection> {
+
+  final queryController = TextEditingController();
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    queryController.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -37,6 +51,7 @@ class SearchSection extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: TextField(
+                  controller: queryController,
                   decoration: InputDecoration(
                     hintText: 'Search anything...',
                     hintStyle: TextStyle(
@@ -65,17 +80,23 @@ class SearchSection extends StatelessWidget {
                       text: 'Attach',
                     ),
                     const Spacer(),
-                    Container(
-                      padding: const EdgeInsets.all(9),
-                      decoration: BoxDecoration(
-                        color: AppColors.submitButton,
-                        borderRadius: BorderRadius.circular(40),
-                      ),
-                      child: const Icon(
-                        Icons.arrow_forward_outlined, 
-                        color: AppColors.background, 
-                        size: 16,
+
+                    GestureDetector(
+                      onTap: () {
+                        ChatWebService().chat(queryController.text.trim());
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.all(9),
+                        decoration: BoxDecoration(
+                          color: AppColors.submitButton,
+                          borderRadius: BorderRadius.circular(40),
                         ),
+                        child: const Icon(
+                          Icons.arrow_forward_outlined, 
+                          color: AppColors.background, 
+                          size: 16,
+                          ),
+                      ),
                     )
                   ],
                 ),
