@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, WebSocket
 from pydantic_models.chat_body import ChatBody
 from services.llm_service import LLMService
 from services.sort_source_service import SortSourceService
