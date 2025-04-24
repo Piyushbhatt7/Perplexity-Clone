@@ -16,6 +16,14 @@ llm_service = LLMService()
 async def websocket_chat_endpoint(websocket: WebSocket):
     await websocket.accept()
     
+    try:
+        pass
+    
+    except:
+        print("Unexpected error occurred")
+    
+    finally:
+        await websocket.close()
 
  # chat
  # / chat? query = who%20is%piyush
