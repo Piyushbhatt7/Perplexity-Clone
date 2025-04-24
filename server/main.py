@@ -32,10 +32,11 @@ async def websocket_chat_endpoint(websocket: WebSocket):
             'data': sorted_results
         })
     
-        for chunk in llm_service.generate_response(body.query, sorted_results)
-    
-    
-        return response 
+        for chunk in llm_service.generate_response(query, sorted_results):
+            await websocket.send_json({
+                type: 'content',
+                'data': chunk
+            })
     
     except:
         print("Unexpected error occurred")
