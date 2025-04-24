@@ -11,6 +11,8 @@ search_service = SearchService()
 sort_source_service = SortSourceService()
 llm_service = LLMService()
 
+# chat websocket
+
  # chat
  # / chat? query = who%20is%piyush
 @app.post("/chat")
