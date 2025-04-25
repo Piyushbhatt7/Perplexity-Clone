@@ -62,7 +62,7 @@ class _SourcesSectionState extends State<SourcesSection> {
               ),
               child: Column(
                 children: [
-                  Text(res['title'])
+                  Text(res['title'], style: TextStyle(fontWeight: FontWeight.w500),)
                 ],
               ),
             );
