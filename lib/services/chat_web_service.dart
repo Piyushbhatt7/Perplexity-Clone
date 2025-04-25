@@ -8,8 +8,8 @@ class ChatWebService {
 
  factory ChatWebService() => _instance;
  ChatWebService._internal();
- final _searchResultController = StreamController();
- final _contentController = StreamController();
+ final _searchResultController = StreamController<Map<String, dynamic>>();
+ final _contentController = StreamController<Map<String, dynamic>>();
 
  Stream<Map<String, dynamic>> get searchResultStream =>
       _searchResultController.stream;
