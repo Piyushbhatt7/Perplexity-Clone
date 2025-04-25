@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:perplexity_clone/Theme/colors.dart';
+import 'package:perplexity_clone/services/chat_web_service.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
 class SourcesSection extends StatefulWidget {
   const SourcesSection({super.key});
@@ -27,6 +29,18 @@ class _SourcesSectionState extends State<SourcesSection> {
           'https://economictimes.indiatimes.com/news/sports/ind-vs-aus-four-australian-batters-score-half-centuries-in-boxing-day-test-jasprit-bumrah-leads-indias-fightback/articleshow/116674365.cms',
     },
   ];
+
+  @override
+  void initState() {
+    super.initState();
+    ChatWebService().searchResultStream.listen((data) {
+      setState(() {
+        searchResults = data['data'];
+        isLoading = false;
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -34,54 +48,61 @@ class _SourcesSectionState extends State<SourcesSection> {
       children: [
         Row(
           children: [
-            Icon(Icons.source_outlined, color: Colors.white,),
-            SizedBox(width: 8.0,),
+            Icon(
+              Icons.source_outlined,
+              color: Colors.white70,
+            ),
+            SizedBox(width: 8),
             Text(
-              "Sources", 
+              "Sources",
               style: TextStyle(
-                fontSize: 18.0,
+                fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
             )
           ],
         ),
-
-        const SizedBox(
-          height: 16.0,
-          
-        ),
-        Wrap(
-          spacing: 16.0,
-          runSpacing: 16.0,
-          children: searchResults.map((res) {
-            return Container(
-              width: 150,
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: AppColors.cardColor,
-                borderRadius: BorderRadius.circular(10.0)
-              ),
-              child: Column(
-                children: [
-                  Text(res['title'], style: TextStyle(fontWeight: FontWeight.w500),
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  ),
-
-                  const SizedBox(height: 8.0,),
-
-                  Text(res['url'], style: TextStyle(fontSize: 11.0, color: AppColors.footerGrey),
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  ),
-                ],
-              ),
-            );
-          }).toList()
-        ),
-        
+        const SizedBox(height: 16),
+        Skeletonizer(
+          enabled: isLoading,
+          child: Wrap(
+            spacing: 16,
+            runSpacing: 16,
+            children: searchResults.map((res) {
+              return Container(
+                width: 150,
+                padding: EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: AppColors.cardColor,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Column(
+                  children: [
+                    Text(
+                      res['title'],
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                      ),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    const SizedBox(height: 8),
+                    Text(
+                      res['url'],
+                      style: TextStyle(
+                        color: Colors.grey,
+                        fontSize: 12,
+                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ],
+                ),
+              );
+            }).toList(),
+          ),
+        )
       ],
-      
     );
   }
 }
