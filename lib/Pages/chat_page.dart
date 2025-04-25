@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:perplexity_clone/Widgets/side_bar.dart';
 
 class ChatPage extends StatefulWidget {
-  const ChatPage({super.key});
+  final String question;
+  const ChatPage({super.key, required this.question});
 
   @override
   State<ChatPage> createState() => _ChatPageState();
