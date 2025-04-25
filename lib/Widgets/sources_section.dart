@@ -14,7 +14,15 @@ class _SourcesSectionState extends State<SourcesSection> {
       children: [
         Row(
           children: [
-            Icon(Icons.source),
+            Icon(Icons.source_outlined),
+            SizedBox(width: 8.0,),
+            Text(
+              "Sources", 
+              style: TextStyle(
+                fontSize: 18.0,
+                fontWeight: FontWeight.bold,
+              ),
+            )
           ],
         )
       ],
