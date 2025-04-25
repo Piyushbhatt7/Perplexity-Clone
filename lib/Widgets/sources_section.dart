@@ -62,7 +62,15 @@ class _SourcesSectionState extends State<SourcesSection> {
               ),
               child: Column(
                 children: [
-                  Text(res['title'], style: TextStyle(fontWeight: FontWeight.w500),)
+                  Text(res['title'], style: TextStyle(fontWeight: FontWeight.w500),
+                  maxLines: 2,
+                  ),
+
+                  const SizedBox(height: 8.0,),
+
+                  Text(res['title'], style: TextStyle(fontWeight: FontWeight.w500),
+                  maxLines: 2,
+                  ),
                 ],
               ),
             );
