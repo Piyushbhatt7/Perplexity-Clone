@@ -11,10 +11,11 @@ class _SourcesSectionState extends State<SourcesSection> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Row(
           children: [
-            Icon(Icons.source_outlined),
+            Icon(Icons.source_outlined, color: Colors.white,),
             SizedBox(width: 8.0,),
             Text(
               "Sources", 
