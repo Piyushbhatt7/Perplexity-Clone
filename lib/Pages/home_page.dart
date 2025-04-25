@@ -13,6 +13,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
+  String fullResponse = "";
+
   @override
   void initState() {
     // TODO: implement initState
