@@ -58,6 +58,12 @@ class _SourcesSectionState extends State<SourcesSection> {
               width: 150,
               decoration: BoxDecoration(
                 color: AppColors.cardColor,
+                borderRadius: BorderRadius.circular(8.0)
+              ),
+              child: Column(
+                children: [
+                  Text(res['title'])
+                ],
               ),
             );
           }).toList()
