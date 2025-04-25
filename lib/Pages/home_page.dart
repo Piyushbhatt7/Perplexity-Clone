@@ -36,21 +36,7 @@ class _HomePageState extends State<HomePage> {
                   child: SearchSection()
                   ),
                // footer section
-               StreamBuilder(
-                stream: ChatWebService().contentStream, 
-                builder: (context, snapahot)
-                {
-                  if(snapahot.connectionState == ConnectionState.waiting){
-                    return const Center(
-                      child: CircularProgressIndicator(),
-                    );
-                  }
-
-                  fullResponse += snapahot.data?['data'] ?? '';
-
-                  return Text(fullResponse);
-                }
-                ),
+              
                Container(
                 padding: EdgeInsets.symmetric(vertical: 16.0),
                 child: Wrap(
