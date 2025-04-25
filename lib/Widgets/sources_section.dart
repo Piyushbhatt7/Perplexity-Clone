@@ -56,6 +56,7 @@ class _SourcesSectionState extends State<SourcesSection> {
           children: searchResults.map((res) {
             return Container(
               width: 150,
+              padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
                 color: AppColors.cardColor,
                 borderRadius: BorderRadius.circular(10.0)
@@ -64,6 +65,7 @@ class _SourcesSectionState extends State<SourcesSection> {
                 children: [
                   Text(res['title'], style: TextStyle(fontWeight: FontWeight.w500),
                   maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                   ),
 
                   const SizedBox(height: 8.0,),
