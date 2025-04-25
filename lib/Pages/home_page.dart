@@ -35,9 +35,11 @@ class _HomePageState extends State<HomePage> {
                   ),
                // footer section
                StreamBuilder(
-                stream: stream, 
-                builder: builder
-                )
+                stream: ChatWebService().contentStream, 
+                builder: (context, snapahot){
+
+                }
+                ),
                Container(
                 padding: EdgeInsets.symmetric(vertical: 16.0),
                 child: Wrap(
