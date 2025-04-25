@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:perplexity_clone/Theme/colors.dart';
 
 class SourcesSection extends StatefulWidget {
   const SourcesSection({super.key});
@@ -53,7 +54,12 @@ class _SourcesSectionState extends State<SourcesSection> {
           spacing: 16.0,
           runSpacing: 16.0,
           children: searchResults.map((res) {
-            return Container();
+            return Container(
+              width: 150,
+              decoration: BoxDecoration(
+                color: AppColors.cardColor,
+              ),
+            );
           }).toList()
         ),
         
