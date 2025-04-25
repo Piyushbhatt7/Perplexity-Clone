@@ -28,6 +28,10 @@ class ChatWebService {
       if(data['type'] == 'searchController'){
         _searchResultController.add(data);
       }
+
+      else if(data['type'] == 'content') {
+        _contentController.add(data);
+      }
     });
 
     _socket!.onError.listen((e) => print("WebSocket error: $e"));
