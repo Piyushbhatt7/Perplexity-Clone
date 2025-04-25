@@ -52,7 +52,9 @@ class _SourcesSectionState extends State<SourcesSection> {
         Wrap(
           spacing: 16.0,
           runSpacing: 16.0,
-          children: [],
+          children: searchResults.map((res) {
+            return Container();
+          }).toList()
         ),
         
       ],
