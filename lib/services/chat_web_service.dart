@@ -25,7 +25,9 @@ class ChatWebService {
 
     _socket!.onMessage.listen((event) {
       final data = json.decode(event.data!);
-      print(data['type']);
+      if(data['type'] == 'searchController'){
+        _searchResultController.add(data);
+      }
     });
 
     _socket!.onError.listen((e) => print("WebSocket error: $e"));
