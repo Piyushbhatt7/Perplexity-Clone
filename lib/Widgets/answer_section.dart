@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:perplexity_clone/Theme/colors.dart';
 
 class AnswerSection extends StatefulWidget {
   const AnswerSection({super.key});
@@ -73,9 +74,16 @@ Let me know if you’d like more detailed analysis or updates on specific player
           fontWeight: FontWeight.bold
         ),),
 
-        const SizedBox(height: 16.0,),
-
-        Markdown(data: fullResponse, shrinkWrap: true,)
+        Markdown(
+          data: fullResponse, 
+          shrinkWrap: true,
+          styleSheet: MarkdownStyleSheet.fromTheme(ThemeData.dark()).copyWith(
+            codeblockDecoration: BoxDecoration(
+              color: AppColors.cardColor,
+              borderRadius: BorderRadius.circular(10.0)
+            )
+          ),
+          )
       ],
     );
   }
