@@ -36,8 +36,15 @@ class _HomePageState extends State<HomePage> {
                // footer section
                StreamBuilder(
                 stream: ChatWebService().contentStream, 
-                builder: (context, snapahot){
+                builder: (context, snapahot)
+                {
+                  if(snapahot.connectionState == ConnectionState.waiting){
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  }
 
+                  return Text(snapahot.data()['content']);
                 }
                 ),
                Container(
