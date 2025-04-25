@@ -34,6 +34,10 @@ class _HomePageState extends State<HomePage> {
                   child: SearchSection()
                   ),
                // footer section
+               StreamBuilder(
+                stream: stream, 
+                builder: builder
+                )
                Container(
                 padding: EdgeInsets.symmetric(vertical: 16.0),
                 child: Wrap(
