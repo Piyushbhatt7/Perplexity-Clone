@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage> {
                     );
                   }
 
-                  fullResponse += snapahot.data!['content'];
+                  fullResponse += snapahot.data?['content'];
 
                   return Text(fullResponse);
                 }
