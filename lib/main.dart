@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       home: ChatPage(
-        question: '',
+        question: 'Who is ronaldo?',
       ),
     );
   }
