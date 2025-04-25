@@ -68,7 +68,7 @@ class _SourcesSectionState extends State<SourcesSection> {
 
                   const SizedBox(height: 8.0,),
 
-                  Text(res['title'], style: TextStyle(fontWeight: FontWeight.w500),
+                  Text(res['title'], style: TextStyle(fontSize: 12.0, color: AppColors.footerGrey),
                   maxLines: 2,
                   ),
                 ],
