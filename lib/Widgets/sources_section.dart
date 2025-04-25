@@ -58,7 +58,7 @@ class _SourcesSectionState extends State<SourcesSection> {
               width: 150,
               decoration: BoxDecoration(
                 color: AppColors.cardColor,
-                borderRadius: BorderRadius.circular(8.0)
+                borderRadius: BorderRadius.circular(10.0)
               ),
               child: Column(
                 children: [
@@ -68,8 +68,9 @@ class _SourcesSectionState extends State<SourcesSection> {
 
                   const SizedBox(height: 8.0,),
 
-                  Text(res['title'], style: TextStyle(fontSize: 12.0, color: AppColors.footerGrey),
-                  maxLines: 2,
+                  Text(res['url'], style: TextStyle(fontSize: 12.0, color: AppColors.footerGrey),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                   ),
                 ],
               ),
