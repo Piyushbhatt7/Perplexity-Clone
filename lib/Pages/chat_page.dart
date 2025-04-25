@@ -21,7 +21,11 @@ class _ChatPageState extends State<ChatPage> {
           const SizedBox(width: 100.0,),
           Column(
             children: [
-              Text()
+              Text(widget.question, style: 
+              TextStyle(
+                
+              )
+              ,)
             ],
           )
         ],
