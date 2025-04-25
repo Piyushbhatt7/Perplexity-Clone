@@ -39,6 +39,8 @@ dependencies:
   universal_io: ^2.2.2
   web_socket_channel: ^3.0.3
   flutter_markdown: ^0.7.7
+  get: ^4.7.2
+  skeletonizer: ^1.4.3
 
 dev_dependencies:
   flutter_test:
