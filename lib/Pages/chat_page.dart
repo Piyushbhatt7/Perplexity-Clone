@@ -27,6 +27,7 @@ class ChatPage extends StatelessWidget {
                 SizedBox(height: 24.0,),
                 // sources
                 SourcesSection(),
+                SizedBox(height: 24.0,),
                 // answer section
                 AnswerSection(),
 
