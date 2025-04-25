@@ -13,6 +13,9 @@ class ChatWebService {
 
  Stream<Map<String, dynamic>> get searchResultStream =>
       _searchResultController.stream;
+
+      Stream<Map<String, dynamic>> get contentStream =>
+      _contentController.stream;
   void connect() {
     _socket = WebSocket('ws://localhost:8000/ws/chat');
 
