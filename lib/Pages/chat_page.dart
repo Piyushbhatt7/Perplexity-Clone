@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:perplexity_clone/Widgets/answer_section.dart';
 import 'package:perplexity_clone/Widgets/side_bar.dart';
 import 'package:perplexity_clone/Widgets/sources_section.dart';
 
@@ -27,6 +28,7 @@ class ChatPage extends StatelessWidget {
                 // sources
                 SourcesSection(),
                 // answer section
+                AnswerSection(),
 
               ],
             ),
