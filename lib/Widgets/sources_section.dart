@@ -11,7 +11,7 @@ class _SourcesSectionState extends State<SourcesSection> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
           children: [
@@ -25,8 +25,20 @@ class _SourcesSectionState extends State<SourcesSection> {
               ),
             )
           ],
-        )
+        ),
+
+        const SizedBox(
+          height: 16.0,
+          
+        ),
+        Wrap(
+          spacing: 16.0,
+          runSpacing: 16.0,
+          children: [],
+        ),
+        
       ],
+      
     );
   }
 }
