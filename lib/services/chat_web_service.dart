@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'dart:html';
 
@@ -7,6 +8,7 @@ class ChatWebService {
 
  factory ChatWebService() => _instance;
  ChatWebService._internal();
+ final _searchResultController = StreamController();
   void connect() {
     _socket = WebSocket('ws://localhost:8000/ws/chat');
 
