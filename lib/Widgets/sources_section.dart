@@ -70,7 +70,7 @@ class _SourcesSectionState extends State<SourcesSection> {
 
                   const SizedBox(height: 8.0,),
 
-                  Text(res['url'], style: TextStyle(fontSize: 12.0, color: AppColors.footerGrey),
+                  Text(res['url'], style: TextStyle(fontSize: 11.0, color: AppColors.footerGrey),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   ),

@@ -14,24 +14,28 @@ class ChatPage extends StatelessWidget {
         children: [
           SideBar(),
           const SizedBox(width: 100.0,),
-          Padding(
-            padding: const EdgeInsets.all(24.0),
-            child: Column(
-              children: [
-                Text(question, style: 
-                TextStyle(
-                  fontSize: 40.0,
-                  fontWeight: FontWeight.bold,
+          Expanded(
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.all(24.0),
+                child: Column(
+                  children: [
+                    Text(question, style: 
+                    TextStyle(
+                      fontSize: 40.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    ),
+                    SizedBox(height: 24.0,),
+                    // sources
+                    SourcesSection(),
+                    SizedBox(height: 24.0,),
+                    // answer section
+                    AnswerSection(),
+              
+                  ],
                 ),
-                ),
-                SizedBox(height: 24.0,),
-                // sources
-                SourcesSection(),
-                SizedBox(height: 24.0,),
-                // answer section
-                AnswerSection(),
-
-              ],
+              ),
             ),
           )
         ],
