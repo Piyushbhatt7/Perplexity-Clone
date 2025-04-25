@@ -23,7 +23,9 @@ class MyApp extends StatelessWidget {
           ThemeData.dark().textTheme,
         ),
       ),
-      home: ChatPage(),
+      home: ChatPage(
+        question: '',
+      ),
     );
   }
 }

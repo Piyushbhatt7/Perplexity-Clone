@@ -23,7 +23,8 @@ class _ChatPageState extends State<ChatPage> {
             children: [
               Text(widget.question, style: 
               TextStyle(
-                
+                fontSize: 40.0,
+                fontWeight: FontWeight.bold,
               )
               ,)
             ],
