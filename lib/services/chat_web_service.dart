@@ -9,6 +9,7 @@ class ChatWebService {
  factory ChatWebService() => _instance;
  ChatWebService._internal();
  final _searchResultController = StreamController();
+ final _contentController = StreamController();
   void connect() {
     _socket = WebSocket('ws://localhost:8000/ws/chat');
 
