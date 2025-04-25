@@ -77,10 +77,13 @@ Let me know if you’d like more detailed analysis or updates on specific player
         Markdown(
           data: fullResponse, 
           shrinkWrap: true,
-          styleSheet: MarkdownStyleSheet.fromTheme(ThemeData.dark()).copyWith(
+          styleSheet: MarkdownStyleSheet.fromTheme(Theme.of(context)).copyWith(
             codeblockDecoration: BoxDecoration(
               color: AppColors.cardColor,
-              borderRadius: BorderRadius.circular(10.0)
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            code: const TextStyle(
+              fontSize: 16.0
             )
           ),
           )
