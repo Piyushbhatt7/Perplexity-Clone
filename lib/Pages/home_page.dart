@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    ChatWebService().connect();
+    ChatWebService().connect(); 
   }
   @override
   Widget build(BuildContext context) {
